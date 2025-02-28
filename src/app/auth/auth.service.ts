@@ -14,7 +14,12 @@ export class AuthService {
   token: string | null = null;
   refreshToken: string | null = null;
 
+  cookiesService: CookieService = inject(CookieService);
+
   get isAuthenticated() {
+    if(!this.token){
+      this.token = this.cookiesService.get('token')
+    }
     return !!this.token;
   }
 
@@ -27,6 +32,8 @@ export class AuthService {
         tap(value => {
           this.token = value.access_token;
           this.refreshToken = value.refresh_token;
+          this.cookiesService.set('token', value.access_token);
+          this.cookiesService.set('refresh_token', value.refresh_token);
         })
       );
   }

@@ -4,11 +4,11 @@ import {ImgUrlPipe} from "../../helpers/pipes/img-url.pipe";
 
 @Component({
   selector: 'app-profile-card',
-  standalone: true,
   imports: [
     ImgUrlPipe
   ],
   templateUrl: './profile-card.component.html',
+  standalone: true,
   styleUrl: './profile-card.component.scss'
 })
 export class ProfileCardComponent {

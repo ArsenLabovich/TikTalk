@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "fonts";
-@import "margins";
+@use "fonts";
+@use "margins";
 
 :root {
   --dark-color: #000000;

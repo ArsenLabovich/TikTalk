@@ -5,11 +5,11 @@ import {Profile} from "../../data/interfaces/profile.interface";
 
 @Component({
   selector: 'app-search-page',
-  standalone: true,
   imports: [
     ProfileCardComponent
   ],
   templateUrl: './search-page.component.html',
+  standalone: true,
   styleUrl: './search-page.component.scss'
 })
 export class SearchPageComponent {
