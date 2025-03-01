@@ -16,3 +16,31 @@
   justify-content: center;
   width: 80%;
 }
+.username-input{
+  position: relative;
+}
+.password-input{
+  position: relative;
+}
+.telegram-icon{
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #FFFFFFBF;
+
+
+}
+.password-eye-btn {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #FFFFFFBF;
+  cursor: pointer;
+}
+.active {
+  color: var(--primary-color);
+}

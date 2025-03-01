@@ -1,7 +1,7 @@
 <div class="profile-card__wrapper">
-  @for (profile of profiles; track profile.id) {
+  <div *ngFor="let profile of profiles;">
     <app-profile-card [profile]="profile">
 
     </app-profile-card>
-  }
+</div>
 </div>

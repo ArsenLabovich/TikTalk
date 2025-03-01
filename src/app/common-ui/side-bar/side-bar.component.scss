@@ -1,0 +1,57 @@
+:host {
+  width: 50vw;
+  display: block;
+  padding: 20px 12px;
+  background: var(--dark-color);
+}
+
+.main-menu-list {
+  display: grid;
+  grid-gap: 8px;
+  list-style: none;
+}
+
+.menu-item {
+  width: 100%;
+  text-align: left;
+  justify-self: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--light-color);
+  display: grid;
+  grid-template-columns:16px 1fr max-content;
+  grid-gap: 12px;
+  line-height: 24px;
+  font-weight: 700;
+  font-size: 14px;
+  align-items: center;
+  border-radius: 2px;
+
+  &:hover,
+  &:focus {
+    background: var(--dark-hover-color);
+    color: var(--primary-color);
+    path {
+      fill: var(--primary-color);
+    }
+  }
+}
+.item-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.to-subscribers{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.to-subscribers-link{
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+
