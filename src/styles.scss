@@ -19,6 +19,7 @@
 }
 
 body {
+  height: 100dvh;
   font-family: "JetBrains Mono", sans-serif;
   background: var(--dark-color);
   color: var(--light-color);
@@ -52,6 +53,12 @@ body {
   white-space: nowrap;
   height: 24px;
 
+}
+.h4 {
+  line-height: 32px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
 }
 
 .btn {
@@ -114,4 +121,11 @@ body {
   line-height: 21px;
   font-family: "JetBrains Mono", sans-serif;
   color: var(--light-color);
+}
+
+.regular{
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 21px;
 }

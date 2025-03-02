@@ -1,4 +1,4 @@
-import {inject, Injectable} from '@angular/core';
+import {inject, Injectable, signal} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Profile} from "../interfaces/profile.interface";
 import {Pageable} from "../interfaces/pageable.interface";
@@ -12,12 +12,14 @@ export class ProfileService {
 
   baseUrl: string = 'https://icherniakov.ru/yt-course/';
 
+  me = signal<Profile | null>(null);
+
   constructor() {
   }
 
-  getSubscribersShortList(page: number = 1, size: number = 50) {
+  getSubscribersShortList(subs_amount: number = 3, page: number = 1, size: number = 50) {
     return this.http.get<Pageable<Profile>>(`${this.baseUrl}account/subscribers/?page=${page}&size=${size}`).pipe(
-      map(res => res.items.slice(0,3)),
+      map(res => res.items.slice(0, subs_amount)),
     );
   }
 
@@ -27,6 +29,10 @@ export class ProfileService {
   }
 
   getMe() {
-    return this.http.get<Profile[]>(`${this.baseUrl}account/me`);
+    return this.http.get<Profile>(`${this.baseUrl}account/me`).pipe(tap(res => this.me.set(res)));
+  }
+
+  getAccount(id: string) {
+    return this.http.get<Profile>(`${this.baseUrl}account/${id}`);
   }
 }

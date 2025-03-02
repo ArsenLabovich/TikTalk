@@ -5,15 +5,15 @@ import {ProfileService} from "../../data/services/profile.service";
 import {Profile} from "../../data/interfaces/profile.interface";
 import {AsyncPipe, JsonPipe, NgForOf} from "@angular/common";
 import {firstValueFrom} from "rxjs";
+import {ImgUrlPipe} from "../../helpers/pipes/img-url.pipe";
 
 @Component({
   selector: 'app-side-bar',
   imports: [
     RouterLink,
-    JsonPipe,
     SubscriberCardComponent,
-    NgForOf,
-    AsyncPipe
+    AsyncPipe,
+    ImgUrlPipe
   ],
   templateUrl: './side-bar.component.html',
   standalone: true,
@@ -24,7 +24,7 @@ export class SideBarComponent {
   profileService = inject(ProfileService)
 
   subscribers$ = this.profileService.getSubscribersShortList()
-  me = this.profileService.getMe();
+  me = this.profileService.me;
 
   constructor() {
 

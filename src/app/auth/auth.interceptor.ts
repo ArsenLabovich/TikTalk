@@ -21,7 +21,6 @@ export const authTokenInerceptor: HttpInterceptorFn = (req, next) => {
       }
       return throwError(err);
     })
-
   );
 
 }
