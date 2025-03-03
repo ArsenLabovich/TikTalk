@@ -8,6 +8,7 @@
   --primary-color: #AE7AFF;
   --gray-color: #5F646D;
   --dark-hover-color: #161616;
+  --light-Transparent-color: rgba(255,255,255,0.75);
 }
 
 *,
@@ -54,6 +55,7 @@ body {
   height: 24px;
 
 }
+
 .h4 {
   line-height: 32px;
   font-size: 24px;
@@ -123,9 +125,47 @@ body {
   color: var(--light-color);
 }
 
-.regular{
+.tt-form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+}
+
+.tt-form-label__text{
+  color: var(--light-Transparent-color);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.tt-form-input {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  font-style: normal;
+  border: none;
+  color: var(--light-color);
+  border-bottom: 1px solid var(--light-color);
+  height: 33px;
+  border-radius: 4px;
+  background: none;
+
+  &:focus-visible{
+    outline: 1px solid var(--primary-color);
+  }
+}
+
+.regular {
   font-weight: 400;
   font-size: 14px;
   font-style: normal;
   line-height: 21px;
 }
+
+.tt-text-area{
+  height: 84px;
+  resize: none;
+}
+

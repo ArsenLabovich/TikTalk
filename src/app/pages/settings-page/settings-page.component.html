@@ -1,0 +1,38 @@
+<app-profile-header></app-profile-header>
+<form class="profile-form__wrapper" [formGroup]="form">
+  <div class="profile-form">
+    <div class="two-columns">
+      <label class="tt-form-label">
+        <span class="tt-form-label__text">First name</span>
+        <input type="text" class="tt-form-input" formControlName="firstName">
+      </label>
+      <label class="tt-form-label">
+        <span class="tt-form-label__text">Last name</span>
+        <input type="text" class="tt-form-input" formControlName="lastName">
+      </label>
+    </div>
+    <label class="tt-form-label">
+      <span class="tt-form-label__text">Username</span>
+      <input type="text" class="tt-form-input" formControlName="username">
+    </label>
+    <label class="tt-form-label">
+      <span class="tt-form-label__text">About</span>
+      <textarea class="tt-form-input tt-text-area" rows="4" formControlName="description"></textarea>
+    </label>
+    <label class="tt-form-label">
+      <app-avatar-upload></app-avatar-upload>
+
+    </label>
+    <label class="tt-form-label">
+      <span class="tt-form-label__text">Stack</span>
+      <input type="text" class="tt-form-input" formControlName="stack">
+    </label>
+  </div>
+  <div>
+    <div>
+      <button class="btn" (click)="onSave()">Save</button>
+    </div>
+  </div>
+
+
+</form>

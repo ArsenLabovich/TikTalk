@@ -4,6 +4,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 24px;
 }
 
 
@@ -26,6 +27,7 @@
 }
 
 .profile-page__body {
+  padding: 24px;
   display: grid;
   grid-gap: 64px;
   grid-template-columns: 1fr 350px;
@@ -60,4 +62,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.stack-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
 }

@@ -35,4 +35,14 @@ export class ProfileService {
   getAccount(id: string) {
     return this.http.get<Profile>(`${this.baseUrl}account/${id}`);
   }
+  patchProfile(data: Partial<Profile>) {
+    return this.http.patch<Profile>(`${this.baseUrl}account/me`, data);
+  }
+
+  uploadAvatar(file: File) {
+    const fd = new FormData();
+    fd.append('image', file);
+    return this.http.post<Profile>(`${this.baseUrl}account/upload_image`, fd);
+  }
 }
+
