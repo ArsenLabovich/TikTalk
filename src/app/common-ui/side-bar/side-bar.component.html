@@ -7,7 +7,9 @@
 <nav>
   <ul class="main-menu-list">
     <li>
-      <button [routerLink]="['profile/me']" class="menu-item">
+      <button [routerLink]="['profile/me']"
+              routerLinkActive="active"
+              class="menu-item">
         <svg class="item-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
              xmlns="http://www.w3.org/2000/svg">
           <path
@@ -18,7 +20,7 @@
       </button>
     </li>
     <li>
-      <button class="menu-item">
+      <button [routerLink]="['chats']" class="menu-item">
         <svg class="item-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M6.65625 13.3438H3.34375V8H1.34375L8 2L14.6562 8H12.6562V13.3438H9.34375V9.34375H6.65625V13.3438Z"
@@ -29,7 +31,9 @@
       </button>
     </li>
     <li>
-      <button [routerLink]="['']" class="menu-item">
+      <button [routerLink]="['search']"
+              routerLinkActive="active"
+              class="menu-item">
         <svg class="item-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
              xmlns="http://www.w3.org/2000/svg">
           <path

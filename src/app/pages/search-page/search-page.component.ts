@@ -2,13 +2,16 @@ import {Component, inject} from '@angular/core';
 import {ProfileCardComponent} from "../../common-ui/profile-card/profile-card.component";
 import {ProfileService} from "../../data/services/profile.service";
 import {Profile} from "../../data/interfaces/profile.interface";
-import {NgForOf} from "@angular/common";
+import {AsyncPipe, NgForOf} from "@angular/common";
+import {ProfileFiltersComponent} from "./profile-filters/profile-filters.component";
 
 @Component({
   selector: 'app-search-page',
   imports: [
     ProfileCardComponent,
-    NgForOf
+    NgForOf,
+    ProfileFiltersComponent,
+    AsyncPipe
   ],
   templateUrl: './search-page.component.html',
   standalone: true,
@@ -16,11 +19,8 @@ import {NgForOf} from "@angular/common";
 })
 export class SearchPageComponent {
   profileService: ProfileService = inject(ProfileService);
-  profiles: Profile[] = [];
+  profiles = this.profileService.filteredProfiles;
 
   constructor() {
-    this.profileService.getTestAccounts().subscribe((data) => {
-      this.profiles = data;
-    });
   }
 }

@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {SubscriberCardComponent} from "./subscriber-card/subscriber-card.component";
-import {RouterLink} from "@angular/router";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 import {ProfileService} from "../../data/services/profile.service";
 import {Profile} from "../../data/interfaces/profile.interface";
 import {AsyncPipe, JsonPipe, NgForOf} from "@angular/common";
@@ -13,7 +13,8 @@ import {ImgUrlPipe} from "../../helpers/pipes/img-url.pipe";
     RouterLink,
     SubscriberCardComponent,
     AsyncPipe,
-    ImgUrlPipe
+    ImgUrlPipe,
+    RouterLinkActive
   ],
   templateUrl: './side-bar.component.html',
   standalone: true,

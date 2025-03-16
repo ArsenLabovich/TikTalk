@@ -13,6 +13,7 @@ export class ProfileService {
   baseUrl: string = 'https://icherniakov.ru/yt-course/';
 
   me = signal<Profile | null>(null);
+  filteredProfiles= signal<Profile[]>([]);
 
   constructor() {
   }
@@ -44,5 +45,14 @@ export class ProfileService {
     fd.append('image', file);
     return this.http.post<Profile>(`${this.baseUrl}account/upload_image`, fd);
   }
+
+  filterProfiles(params: Record<string,any>){
+    return this.http.get<Pageable<Profile>>(`${this.baseUrl}account/accounts`,{
+      params
+    }).pipe(
+      tap(res => this.filteredProfiles.set(res.items)),
+    );
+  }
 }
+
 
